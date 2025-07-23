@@ -1,0 +1,9 @@
+services:
+  site-monitor:
+    image: site-monitor
+    build: .
+    volumes:
+      - ./logs:/root/logs  
+    environment:
+      - SITES=https://google.com,https://github.com,https://site-exemplo.com
+    command: ["./site-monitor"]
